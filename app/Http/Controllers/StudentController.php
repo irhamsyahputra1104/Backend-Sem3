@@ -55,6 +55,16 @@ class StudentController extends Controller
         return response()->json($data, 201);
     }
 
+    public function show(Student $student)
+    {
+        $data =[
+            'message' => 'Student is show succesfully',
+            'data' => $student,
+        ];
+
+        return response()->json($data, 201);
+    }
+
     public function destroy(Student $student)
     {
         $student->delete();
